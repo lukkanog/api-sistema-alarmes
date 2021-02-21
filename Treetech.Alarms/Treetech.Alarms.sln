@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treetech.Alarms.WebApi", "Treetech.Alarms.WebApi\Treetech.Alarms.WebApi.csproj", "{1DD1B233-78C1-4CBD-9777-407312E178C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treetech.Alarms.XUnit.Tests", "Treetech.Alarms.XUnit.Tests\Treetech.Alarms.XUnit.Tests.csproj", "{A4B6CA99-BBA0-4A7F-B4A0-D5D024F3E5B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DD1B233-78C1-4CBD-9777-407312E178C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD1B233-78C1-4CBD-9777-407312E178C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD1B233-78C1-4CBD-9777-407312E178C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD1B233-78C1-4CBD-9777-407312E178C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4B6CA99-BBA0-4A7F-B4A0-D5D024F3E5B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4B6CA99-BBA0-4A7F-B4A0-D5D024F3E5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4B6CA99-BBA0-4A7F-B4A0-D5D024F3E5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4B6CA99-BBA0-4A7F-B4A0-D5D024F3E5B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8008CF7-DFB6-40D5-92E2-36480A357528}
+	EndGlobalSection
+EndGlobal
