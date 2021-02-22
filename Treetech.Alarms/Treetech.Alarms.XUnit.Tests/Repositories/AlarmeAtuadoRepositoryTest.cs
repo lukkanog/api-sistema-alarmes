@@ -67,7 +67,7 @@ namespace Treetech.Alarms.XUnit.Tests.Repositories
 
             Assert.NotNull(alarmeAtivado);
             Assert.True(alarmeAtivado.Ativo);
-            Assert.Equal(alarmeAtuado, alarmeAtivado);
+            Assert.Equal(alarmeCadastrado, alarmeAtivado);
         }
     }
 }
