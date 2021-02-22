@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,7 +36,10 @@ namespace Treetech.Alarms.WebApi.Repositories
 
         public async Task<List<Alarme>> Listar()
         {
-            var list = context.Alarmes.ToList();
+            var list = context.Alarmes
+                .Include(x => x.Equipamento)    
+                .ToList();
+
             return list;
         }
 
