@@ -33,19 +33,37 @@ namespace Treetech.Alarms.WebApi.Repositories
 
         }
 
-        public Task<Equipamento> Editar(Equipamento equipamento)
+        public async Task<Equipamento> Editar(Equipamento equipamento)
         {
-            throw new NotImplementedException();
+            Equipamento toBeEdited = context.Equipamentos.Find(equipamento.IdEquipamento);
+
+            if (toBeEdited == null)
+                throw new Exception("Equipamento não encontrado");
+
+
+            context.Update(equipamento);
+            await context.SaveChangesAsync();
+
+            return equipamento;
         }
 
-        public Task<Equipamento> Excluir(int id)
+        public async Task<Equipamento> Excluir(int id)
         {
-            throw new NotImplementedException();
+            Equipamento toBeRemoved = context.Equipamentos.Find(id);
+
+            if (toBeRemoved == null)
+                throw new Exception("Equipamento não encontrado");
+
+            context.Remove(toBeRemoved);
+            await context.SaveChangesAsync();
+
+            return toBeRemoved;
         }
 
-        public Task<List<Equipamento>> Listar()
+        public async Task<List<Equipamento>> Listar()
         {
-            throw new NotImplementedException();
+            List<Equipamento> list = context.Equipamentos.ToList();
+            return list;
         }
     }
 }

@@ -36,5 +36,19 @@ namespace Treetech.Alarms.WebApi.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> ListarEquipamenetos()
+        {
+            try
+            {
+                var list = await equipamentoRepository.Listar();
+                return Ok(list);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { Error = e.Message });
+            }
+        }
+
     }
 }
