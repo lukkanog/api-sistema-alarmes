@@ -23,7 +23,7 @@ namespace Treetech.Alarms.WebApi.Models
         [Required(ErrorMessage = "Informe a data de entrada do alarme atuado.")]
         public DateTime DataEntrada { get; set; }
 
-        [Column("DataEntrada", TypeName = "DATETIME")]
+        [Column("DataSaida", TypeName = "DATETIME")]
         [Required(ErrorMessage = "Informe a data de saída do alarme atuado.")]
         public DateTime DataSaida { get; set; }
 

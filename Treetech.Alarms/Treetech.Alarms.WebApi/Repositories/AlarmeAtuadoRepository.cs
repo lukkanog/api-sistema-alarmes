@@ -42,6 +42,8 @@ namespace Treetech.Alarms.WebApi.Repositories
 
         public async Task<AlarmeAtuado> Cadastrar(AlarmeAtuado alarmeAtuado)
         {
+            alarmeAtuado.Ativo = false;
+
             context.AlarmesAtuados.Add(alarmeAtuado);
             await context.SaveChangesAsync();
 
@@ -54,6 +56,12 @@ namespace Treetech.Alarms.WebApi.Repositories
                 .Include(x => x.Alarme)
                 .ThenInclude(y => y.Equipamento)
                 .ToList();
+
+            //evita loops no JSON de resposta
+            foreach (var item in list)
+            {
+                item.Alarme.AlarmesAtuados = null;
+            }
 
             return list;
         }
