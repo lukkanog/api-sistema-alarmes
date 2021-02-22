@@ -61,7 +61,7 @@ namespace Treetech.Alarms.WebApi.Repositories
             Alarme toBeRemoved = context.Alarmes.Find(id);
 
             if (toBeRemoved == null)
-                throw new Exception("Equipamento não encontrado");
+                throw new Exception("Alarme não encontrado");
 
             context.Alarmes.Remove(toBeRemoved);
             await context.SaveChangesAsync();
