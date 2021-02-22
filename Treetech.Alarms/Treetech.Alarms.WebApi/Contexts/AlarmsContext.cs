@@ -13,6 +13,12 @@ namespace Treetech.Alarms.WebApi.Contexts
 
         public AlarmsContext(DbContextOptions<AlarmsContext> options) : base(options) {}
 
+        public DbSet<Equipamento> Equipamentos { get; set; }
+        public DbSet<Alarme> Alarmes { get; set; }
+        public DbSet<AlarmeAtuado> AlarmesAtuados { get; set; }
+        public DbSet<TipoEquipamento> TiposEquipamento { get; set; }
+        public DbSet<ClassificacaoAlarme> ClassificacoesAlarme { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -41,6 +47,11 @@ namespace Treetech.Alarms.WebApi.Contexts
                     new ClassificacaoAlarme { IdClassificacao = 2, NomeClassificacao = "Médio" },
                     new ClassificacaoAlarme { IdClassificacao = 3, NomeClassificacao = "Alto" }
                     );
+            });
+
+            builder.Entity<Equipamento>(entity =>
+            {
+                entity.HasIndex(e => e.NumeroSerie).IsUnique();
             });
         }
 

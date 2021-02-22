@@ -27,8 +27,8 @@ namespace Treetech.Alarms.WebApi.Models
         public int IdClassificacao { get; set; }
         public ClassificacaoAlarme Classificacao { get; set; }
 
-        [Required(ErrorMessage = "Informe o equipamento relacionado ao alarme")]
         [ForeignKey("Equipamento")]
+        [Required(ErrorMessage = "Informe o equipamento relacionado ao alarme")]
         public int IdEquipamento { get; set; }
         public Equipamento Equipamento { get; set; }
 
