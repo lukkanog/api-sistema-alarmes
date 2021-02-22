@@ -58,12 +58,14 @@ namespace Treetech.Alarms.WebApi.Repositories
 
         public async Task<Alarme> Excluir(int id)
         {
-            Equipamento toBeRemoved = context.Equipamentos.Find(id);
+            Alarme toBeRemoved = context.Alarmes.Find(id);
 
             if (toBeRemoved == null)
                 throw new Exception("Equipamento não encontrado");
 
-            throw new NotImplementedException();
+            context.Alarmes.Remove(toBeRemoved);
+            await context.SaveChangesAsync();
+            return toBeRemoved;
         }
     }
 }
