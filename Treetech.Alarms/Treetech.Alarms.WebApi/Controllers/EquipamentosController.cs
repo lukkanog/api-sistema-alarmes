@@ -28,7 +28,8 @@ namespace Treetech.Alarms.WebApi.Controllers
         {
             try
             {
-                 return Ok(await equipamentoRepository.Cadastrar(equipamento));
+                var equipamentocadastrado = await equipamentoRepository.Cadastrar(equipamento);
+                return Ok(equipamentocadastrado);
             }
             catch (Exception e)
             {
@@ -43,6 +44,34 @@ namespace Treetech.Alarms.WebApi.Controllers
             {
                 var list = await equipamentoRepository.Listar();
                 return Ok(list);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { Error = e.Message });
+            }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> EditarEquipamento(Equipamento equipamento)
+        {
+            try
+            {
+                var equipamentoEditado = await equipamentoRepository.Editar(equipamento);
+                return Ok(equipamentoEditado);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { Error = e.Message });
+            }
+        }
+
+        [HttpDelete("{idEquipamento}")]
+        public async Task<IActionResult> ExcluirEquipamento(int idEquipamento)
+        {
+            try
+            {
+                var equipamentoExcluido = await equipamentoRepository.Excluir(idEquipamento);
+                return Ok(equipamentoExcluido);
             }
             catch (Exception e)
             {

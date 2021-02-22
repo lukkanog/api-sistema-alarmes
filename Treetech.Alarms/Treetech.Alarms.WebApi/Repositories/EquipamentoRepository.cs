@@ -40,8 +40,11 @@ namespace Treetech.Alarms.WebApi.Repositories
             if (toBeEdited == null)
                 throw new Exception("Equipamento não encontrado");
 
+            toBeEdited.NomeEquipamento = equipamento.NomeEquipamento;
+            toBeEdited.NumeroSerie = equipamento.NumeroSerie;
+            toBeEdited.IdTipo = equipamento.IdTipo;
 
-            context.Update(equipamento);
+            context.Update(toBeEdited);
             await context.SaveChangesAsync();
 
             return equipamento;
