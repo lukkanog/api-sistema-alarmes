@@ -65,6 +65,7 @@ namespace Treetech.Alarms.WebApi.Repositories
 
             context.Alarmes.Remove(toBeRemoved);
             await context.SaveChangesAsync();
+
             return toBeRemoved;
         }
     }
