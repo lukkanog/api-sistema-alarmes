@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Treetech.Alarms.WebApi\Treetech.Alarms.WebApi.csproj" />
+  </ItemGroup>
+
 </Project>
