@@ -17,6 +17,7 @@ namespace Treetech.Alarms.WebApi.Repositories
             context = new AlarmsContext();
         }
 
+        //to create in memory repository (for test purporses)
         public EquipamentoRepository(AlarmsContext alarmsContext)
         {
             context = alarmsContext;
