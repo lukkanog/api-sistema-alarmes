@@ -37,13 +37,15 @@ namespace Treetech.Alarms.WebApi.Repositories
         public async Task<List<Alarme>> Listar()
         {
             var list = context.Alarmes
-                .Include(x => x.Equipamento)    
+                .Include(x => x.Equipamento)
+                .Include(x => x.Classificacao)
                 .ToList();
 
             // evitar loops
             foreach (var item in list)
             {
                 item.Equipamento.Alarmes = null;
+                item.Classificacao.Alarmes = null;
             }
 
             return list;
