@@ -40,6 +40,12 @@ namespace Treetech.Alarms.WebApi.Repositories
                 .Include(x => x.Equipamento)    
                 .ToList();
 
+            // evitar loops
+            foreach (var item in list)
+            {
+                item.Equipamento.Alarmes = null;
+            }
+
             return list;
         }
 
