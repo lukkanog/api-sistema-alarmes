@@ -1,6 +1,6 @@
 # Sistema - Alarmes e Equipamentos
 
-Teste prático Treetech | API REST de sistema de cadastro e manipulação de alarmes relacionados a equipamentos. Veja o repositório front-end [aqui.](https://github.com/lukkanog/api-sistema-alarmes/)
+Teste prático Treetech | API REST de sistema de cadastro e manipulação de alarmes relacionados a equipamentos. Veja o repositório front-end [aqui.](https://github.com/lukkanog/sistema-alarmes/)
 
 ## Criado com:
 - ASP.NET CORE
